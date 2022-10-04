@@ -1,6 +1,6 @@
 package personnages;
 
-import sun.security.action.GetBooleanAction;
+//import sun.security.action.GetBooleanAction;
 
 public class Gaulois {
 	private String nom;
@@ -14,13 +14,13 @@ public class Gaulois {
 		return nom;
 	}
 	public void parler(String texte) {
-	System.out.println(prendreParole() + "« " + texte + "»");
+	System.out.println(prendreParole() + "ï¿½ " + texte + "ï¿½");
 	}
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de "
+		System.out.println(nom + " envoie un grand coup dans la mÃ¢choire de "
 				+ romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
@@ -30,12 +30,16 @@ public class Gaulois {
 				+ ", effetPotion=" + effetPotion + "]";
 	}
 	public static void main(String[] args) {
-		//TODO créer un main permettant de tester la classe Gaulois
 		Gaulois asterix;
-		asterix= new Gaulois("Astérix",8);
+		asterix= new Gaulois("AstÃ©rix",8);
 		System.out.println(asterix);
 		System.out.println(asterix.prendreParole());
 		asterix.parler("Coucou");
-		asterix.frapper(asterix));
+		Romain minus;
+		Romain maximus;
+		minus= new Romain("Minus",2);
+		maximus= new Romain("Maximus",8);
+		asterix.frapper(minus);
+		asterix.frapper(maximus);
 	}
 }
