@@ -1,2 +1,2 @@
 # LesGaulois
-Dépôt pour le projet Java de TP1 en ILU1
+D�pôt pour le projet Java de TP1 en ILU1
