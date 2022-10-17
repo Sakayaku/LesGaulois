@@ -31,7 +31,7 @@ public class Village {
 		return villageois[nmVillageois];
 	}
 	public void afficherVillageois() {
-		System.out.println("Dans le village du chef "+chef.getNom()+" vivent les légendaires gaulois:");
+		System.out.println("Dans le village du chef "+chef.getNom()+" vivent les lÃ©gendaires gaulois:");
 		for (int i=0; i<villageois.length; ++i){
 			if (villageois[i]!=null)
 			{System.out.println("-"+villageois[i].getNom());}
@@ -39,18 +39,18 @@ public class Village {
 	}
 	public static void main(String[] args) {
 		Village village;
-		village= new Village("Village des Irréductibles",30);
+		village= new Village("Village des IrrÃ©ductibles",30);
 		//Gaulois gaulois= village.trouverHabitant(30);
 		// L'exception du point prÃ©cÃ©dent est obtenue parce que le tableau est vide.
 		Chef abraracourcix;
 		abraracourcix= new Chef("Abraracourcix", 6, 1, village);
 		Gaulois asterix;
-		asterix= new Gaulois("Astérix",8);
+		asterix= new Gaulois("AstÃ©rix",8);
 		//Gaulois gaulois = village.trouverHabitant(1);
 		//System.out.println(gaulois);
 		// on obtient null car on n'a pas mis Asterix dans le village. 
 		Gaulois obelix;
-		obelix= new Gaulois("Obélix",25);
+		obelix= new Gaulois("ObÃ©lix",25);
 		village.ajouterHabitant(asterix);
 		village.ajouterHabitant(obelix);
 		village.afficherVillageois();

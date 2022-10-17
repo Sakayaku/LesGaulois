@@ -9,31 +9,31 @@ public class Druide {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
 		this.effetPotionMax = effetPotionMax;
-		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " à "
+		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " ï¿½ "
 					+ effetPotionMax + ".");
 		}
 	public String getNom() {
 		return nom;
 	}
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + " »");
+		System.out.println(prendreParole() + "ï¿½ " + texte + " ï¿½");
 	}
 	private String prendreParole() {
 		return "Le druide " + nom + " : ";
 	}
 	public void preparerPotion() {
-		parler("Je vais aller préparer une petite potion...");
+		parler("Je vais aller prÃ©parer une petite potion...");
 		Random random = new Random();
 		forcePotion= effetPotionMin+random.nextInt((effetPotionMax+1)-effetPotionMin);
 		if (forcePotion>7) 
-			{parler("J'ai préparé une super potion de force "+forcePotion);}
+			{parler("J'ai prÃ©parÃ© une super potion de force "+forcePotion);}
 		else
-			{parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force "+forcePotion);};
+			{parler("Je n'ai pas trouvï¿½ tous les ingrï¿½dients, ma potion est seulement de force "+forcePotion);};
 	}
 	public void booster(Gaulois Gaulois) {
-		if (Gaulois.getNom()=="Obélix") {
-			parler("Non Obélix! Tu n'auras pas de potion magique!");
-			Gaulois.parler("Par Bélénos ce n'est pas juste!");
+		if (Gaulois.getNom()=="ObÃ©lix") {
+			parler("Non ObÃ©lix! Tu n'auras pas de potion magique!");
+			Gaulois.parler("Par BÃ©lÃ©nos ce n'est pas juste!");
 		}
 		else
 		{

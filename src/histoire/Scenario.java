@@ -13,8 +13,8 @@ public class Scenario {
 		Druide panoramix;
 		panoramix= new Druide("Panoramix",5,10);
 		panoramix.preparerPotion();
-		asterix= new Gaulois("Astérix",8);
-		obelix= new Gaulois("Obélix",8);
+		asterix= new Gaulois("AstÃ©rix",8);
+		obelix= new Gaulois("ObÃ©lix",8);
 		minus= new Romain("Minus",6);
 		panoramix.booster(obelix);
 		panoramix.booster(asterix);
