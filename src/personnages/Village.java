@@ -3,13 +3,13 @@ package personnages;
 public class Village {
 	private Chef chef;
 	private String nom;
-	private String[] villageois;
+	private Gaulois[] villageois;
 	private int nbVillageois=0;
 	public Village(String nom, int nbVillageoisMaximum) {
 		super();
 		//this.chef = chef;
 		this.nom = nom;
-		villageois=new String[nbVillageoisMaximum];
+		villageois=new Gaulois[nbVillageoisMaximum];
 	}
 	public Chef getChef() {
 		return chef;
@@ -23,16 +23,36 @@ public class Village {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public void ajouterHabitant(String nom) {
-		villageois[nbVillageois]=nom;
+	public void ajouterHabitant(Gaulois gaulois) {
+		villageois[nbVillageois]=gaulois;
 		nbVillageois+=1;
 	}
-	public void trouverHabitant(int nmVillageois) {
+	public Gaulois trouverHabitant(int nmVillageois) {
+		return villageois[nmVillageois];
 	}
-	public static void main() {
+	public void afficherVillageois() {
+		System.out.println("Dans le village du chef "+chef.getNom()+" vivent les légendaires gaulois:");
+		for (int i=0; i<villageois.length; ++i){
+			if (villageois[i]!=null)
+			{System.out.println("-"+villageois[i].getNom());}
+			}
+	}
+	public static void main(String[] args) {
 		Village village;
-		village= new Village("Village des IrrÃ©ductibles",30);
+		village= new Village("Village des Irréductibles",30);
 		//Gaulois gaulois= village.trouverHabitant(30);
-		// L'exception du point prÃ©cÃ©dent est Type mismatch:cannot convert from void to Gaulois. On obtient cette exception  
+		// L'exception du point prÃ©cÃ©dent est obtenue parce que le tableau est vide.
+		Chef abraracourcix;
+		abraracourcix= new Chef("Abraracourcix", 6, 1, village);
+		Gaulois asterix;
+		asterix= new Gaulois("Astérix",8);
+		//Gaulois gaulois = village.trouverHabitant(1);
+		//System.out.println(gaulois);
+		// on obtient null car on n'a pas mis Asterix dans le village. 
+		Gaulois obelix;
+		obelix= new Gaulois("Obélix",25);
+		village.ajouterHabitant(asterix);
+		village.ajouterHabitant(obelix);
+		village.afficherVillageois();
 	}
 }
