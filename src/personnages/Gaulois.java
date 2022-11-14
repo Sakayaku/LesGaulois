@@ -1,5 +1,5 @@
 package personnages;
-
+import histoire.Musee;
 
 public class Gaulois {
 	private String nom;
@@ -7,6 +7,7 @@ public class Gaulois {
 	private int nbTrophees=0;
 	private int effetPotion = 1;
 	private Equipement[] mesTrophees= new Equipement[100];
+	private int c=0;
 	public Gaulois(String nom, int force) {
 			this.nom = nom;
 			this.force = force;
@@ -39,9 +40,17 @@ public class Gaulois {
 		effetPotion = forcePotion;
 		parler("Merci Druide, je sens que ma force est "+effetPotion+" fois dï¿½cuplï¿½e.");
 	}
-	public void faireUneDonnation(Musee) {
-		
-		
+	public void faireUneDonnation(Musee musee) {
+		if (nbTrophees!=0) {
+			parler("« Je donne au musee tous mes trophees : ");
+		}
+		while (nbTrophees>0) {
+			musee.donnerTrophees(this, mesTrophees[c]);
+			System.out.println("-"+mesTrophees[c]);
+			c+=1;
+			nbTrophees-=1;
+		}
+		System.out.println("»");
 	} 
 	public static void main(String[] args) {
 		Gaulois asterix;
